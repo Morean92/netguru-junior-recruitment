@@ -4,5 +4,7 @@ class StudentDecorator < BaseDecorator
   end
 
   def avg_notes(subject_item)
+    avg = subject_item_notes.for_subject_item(subject_item).average(:value)
+    sprintf("%.2f", avg || 0) 
   end
 end
