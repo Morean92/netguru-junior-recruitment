@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024075522) do
+ActiveRecord::Schema.define(version: 20161024213336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +31,17 @@ ActiveRecord::Schema.define(version: 20161024075522) do
     t.string   "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date     "birthdate"
   end
+
+  create_table "students_payments", force: :cascade do |t|
+    t.integer  "student_id"
+    t.datetime "paid"
+    t.datetime "due_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "students_payments", ["student_id"], name: "index_students_payments_on_student_id", using: :btree
 
   create_table "subject_item_notes", force: :cascade do |t|
     t.integer  "value"
@@ -82,6 +91,7 @@ ActiveRecord::Schema.define(version: 20161024075522) do
 
   add_foreign_key "participations", "students"
   add_foreign_key "participations", "subject_items"
+  add_foreign_key "students_payments", "students"
   add_foreign_key "subject_item_notes", "students"
   add_foreign_key "subject_item_notes", "subject_items"
   add_foreign_key "subject_items", "teachers"
