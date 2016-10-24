@@ -33,3 +33,7 @@ end
 crumb :students do
   link t('navbar.students'), students_path
 end
+
+crumb :students_payments do
+  link t('navbar.students_payments'), students_payments_path
+end
