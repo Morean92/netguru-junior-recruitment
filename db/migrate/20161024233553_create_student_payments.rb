@@ -6,4 +6,8 @@ class CreateStudentPayments < ActiveRecord::Migration
       t.datetime :due_date
     end
   end
+
+  def down
+    drop_table :students_payments
+  end
 end
