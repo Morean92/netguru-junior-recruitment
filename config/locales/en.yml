@@ -1,13 +1,9 @@
 en:
-  time:
-    formats:
-      birthdate: "%Y-%M_%D"
   navbar:
     students: Students
     teachers: Teachers
     reports: Reports
     reports_subjects: Subjects
-    students_payments: Payments
     logout: Logout
     signin: Sign in
     signup: Sign up
@@ -35,5 +31,4 @@ en:
   subjects:
     columns:
       full_name: Full name
-      avg_notes: Notes average
-      birthdate: Birthdate
+      avg_notes: Notes avarange

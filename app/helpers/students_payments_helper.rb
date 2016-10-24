@@ -1,2 +1,0 @@
-module StudentsPaymentsHelper
-end

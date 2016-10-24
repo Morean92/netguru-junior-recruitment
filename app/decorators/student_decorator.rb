@@ -7,5 +7,4 @@ class StudentDecorator < BaseDecorator
     avg = subject_item_notes.for_subject_item(subject_item).average(:value)
     sprintf("%.2f", avg || 0) 
   end
-
 end

@@ -10,10 +10,7 @@ Rails.application.routes.draw do
   resources :teachers do
     get :subjects
   end
-  
   resources :visitors
-
-  resources :students_payments, only: %i(index)
 
   get 'reports/subjects', to: 'reports#subjects', as: 'report_subjects' 
 end
